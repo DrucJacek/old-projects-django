@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {% block content %}
+
+<h1>Akta pracownicze</h1>
+
+<div>
+  <p><u>dane</u></p>
+    {{ pracownicy.imie }} {{ pracownicy.nazwisko }}
+    <hr>
+</div>
+
+<div>
+    <p><u>adres</u></p>
+    {{ pracownicy.adres }}
+    <hr>
+</div>
+
+<div>
+    <p><u>stanowisko</u></p>
+    {{ stanowiska.nazwa }}
+    <hr>
+</div>
+
+    {% endblock %}

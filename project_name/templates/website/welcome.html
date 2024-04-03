@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'website/style.css' %}"/>
+
+{% block title %} Spotkania! {% endblock %}
+    {% block content %}
+
+<div class="head">
+    <img src="{% static 'website/sb.png' %}" alt="sb"/>
+    <h1>Nasze spotkania</h1>
+    <p>Miło cię widzieć na naszej stronie.</p>
+</div>
+
+
+<div class="list">
+   <ol>
+{% for meeting in meetings %}
+        <li>
+            <a href="{% url 'detail' meeting.id %}">{{ meeting.title }} </a>
+        </li>
+{% endfor %}   </ol>
+</div>
+
+<a class="button" href="{% url 'rooms' %}"> Zobacz opis pokoi </a>
+<a class="button" href="{% url 'new' %}"> Dodaj nowe spotkanie </a>
+
+    {% endblock %}
+
+

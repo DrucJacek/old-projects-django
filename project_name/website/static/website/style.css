@@ -1,0 +1,88 @@
+* {
+    margin: 0 auto;
+
+}
+.head{
+    background-color: black;
+    padding: 30px 0;
+    display: flex;
+    color: white;
+
+}
+
+
+h2 {
+    border: black 1px solid;
+    background-color: black;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    color: darkred;
+}
+
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+table {
+    border: white 1px solid;
+}
+
+.list {
+    border: white 2px solid;
+    background-color: black;
+    text-align: center;
+
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    border: black 1px solid;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.button {
+  margin: 0 40%;
+
+}
+
+.button1 {
+    margin: 0 50%;
+    text-decoration: none;
+    padding: 10px 10px;
+    background-color: darkblue;
+    color: white;
+
+}
+
+.button1:hover {
+    background-color: lightskyblue;
+    color: darkblue;
+    transition: all .20s ease;
+}
+
+.form1 {
+    border: black 2px dashed;
+    font-size: 40px;
+
+}
+
+a:hover {
+    font-size: 30px;
+    transition: all .10s ease;
+    color: yellow;
+}
+
+.formula {
+    border: black 10px dashed;
+    margin-top: 100px;
+}
+
+
+
+

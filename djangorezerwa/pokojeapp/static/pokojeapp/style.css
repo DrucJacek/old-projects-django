@@ -1,0 +1,39 @@
+* {
+    background-color: mediumturquoise;
+}
+
+th, td {
+    border: 2px wheat solid;
+}
+
+table {
+    border: 4px whitesmoke dashed;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+     animation: pulse 0.5s infinite;
+    font-size: 50px;
+    display: inline-block;
+}
+
+
+@keyframes pulse{
+    0%, 100%{
+        font-size: 50px;
+        color: red;
+
+
+    }
+    50%{
+        font-size: 25px;
+        color: darkblue;
+
+    }
+    20% {
+        font-size: 15px;
+        color: hotpink;
+    }
+
+}

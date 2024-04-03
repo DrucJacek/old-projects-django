@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedagodzy</title>
+</head>
+<body>
+<div>
+    {% for p in ped %}
+
+        <li>Pani {{p.imie}} {{ p.nazwisko }}</li>
+    {% endfor %}
+
+</div>
+<a href="/">powrót</a>
+</body>
+</html>

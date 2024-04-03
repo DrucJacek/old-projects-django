@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <table class="table" id="table2">
+        <tr class="table">
+            <th class="table">Imię</th>
+            <th class="table">Nazwisko</th>
+            <th class="table">Stanowisko</th>
+        </tr>
+
+        {% for p in pracownik %}
+
+        <tr class="table">
+            <td class="table">{{ p.imie }}</td>
+            <td class="table"> {{ p.nazwisko }}</td>
+            <td class="table">{{ p.stanowiska_id.nazwa }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<h3>Liczba zatrudnionych pracowników {{ pracownik | length }}</h3>
+
+<a href="{% url 'new' %}">Dodaj pracownika</a>
+
+{% endblock %}

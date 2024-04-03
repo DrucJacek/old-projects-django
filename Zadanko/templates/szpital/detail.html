@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+
+{% block title %} Good Doctor! {% endblock %}
+{% block content %}
+
+            <h1>
+                Pacjent {{pacjent.imie}} {{ pacjent.nazwisko }}
+            </h1>
+
+            <h2>
+                Wiek: {{ pacjent.wiek }}
+            </h2>
+
+            <h3>
+                Zamieszkały w {{ pacjent.miasto }}, ulica {{ pacjent.ulica }}
+            </h3>
+
+<a href="{% url 'home' %}">Główna strona</a>
+
+{% endblock %}

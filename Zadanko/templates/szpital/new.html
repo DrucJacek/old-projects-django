@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Good Doctor! {% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        <table>
+            {{ form }}
+        </table>
+        {% csrf_token %}
+        <button type="submit">Wyślij</button>
+    </form> <br>
+<img src="{% static 'szpital/img.png' %}" alt="sb"/>
+{% endblock %}

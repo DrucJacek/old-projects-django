@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'school/style.css' %}"/>
+</head>
+    {% block content %}
+    {% endblock %}
+<body>
+</body>
+</html>

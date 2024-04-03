@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+
+{% block content %}
+            <ul>
+           {% for z in zainteres %}
+     <li>Zajęcia {{ z.nazwa }} odbywają się w sali {{ z.numer_sali }}</li>
+        {% endfor %} </ul>
+
+<a href="{% url 'home' %}">Powrót do strony głównej</a>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {% block content %}
+
+
+<table>
+        <tr>
+            <th>Liczba_dni</th>
+            <th>Sezon</th>
+            <th>Pokój</th>
+        </tr>
+        {% for r in rezerwacje %}
+        <tr>
+            <td>{{ r.liczba_dni }}</td>
+            <td>{{ r.sezon }}</td>
+            <td>{{ r.id_pokoju.nazwa }}</td>
+
+        </tr>
+        {%  endfor %}
+</table>
+
+
+        <p><a href="{% url 'rezerwacja'%}">Zarezerwuj pokój</a></p>
+
+
+
+
+    {% endblock %}

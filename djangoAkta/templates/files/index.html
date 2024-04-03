@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {% block content %}
+
+
+<h1>Liczba zatrudnionych pracowników {{ pracownicy|length }}</h1>
+
+
+
+   <ol>
+{% for p in pracownicy %}
+
+        <li>
+            <p> {{ p.imie }} {{ p.nazwisko }} <a href="{% url 'detail' p.id %}">szczegóły</a></p>
+        </li>
+{% endfor %}   </ol>
+
+
+    {% endblock %}

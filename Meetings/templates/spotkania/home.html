@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+</head>
+<body>
+<div>
+    {% for spotkania in spotkania %}
+        <li>Spotkanie {{spotkania.title}} {{ spotkania.date }} o godzinie {{ spotkania.start_time }}<a href="{% url 'book_detail' spotkania.id %}">szczegóły</a></li>
+    {% endfor %}
+
+
+    <a href="{% url 'pedagog' %}">Nasi pedagodzy</a>
+    <a href="{% url 'uczen' %}">Nasi podopieczni</a>
+</div>
+</body>
+</html>

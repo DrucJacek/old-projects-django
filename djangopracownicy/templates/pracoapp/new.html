@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {% block content %}
+
+
+
+<form method="post">
+    <table class="forma">
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">dodaj</button>
+</form>
+
+<a href="{% url 'welcome' %}">strona główna</a>
+
+    {% endblock %}
+

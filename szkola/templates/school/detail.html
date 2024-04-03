@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+          <p>
+                {{uczenta.imie}} {{ uczenta.nazwisko}} z klasy {{ uczenta.klasa }}
+            </p>
+
+
+<a href="{% url 'home' %}">Powrót do strony głównej</a>
+
+{% endblock %}

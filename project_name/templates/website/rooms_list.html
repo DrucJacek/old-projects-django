@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'website/style.css' %}"/>
+
+{% block title %} Lista pokoi! {% endblock %}
+    {% block content %}
+
+<div class="head">
+    <img src="{% static 'website/sb.png' %}" alt="sb"/>
+    <h1>Nasze spotkania</h1>
+    <p>Miło cię widzieć na naszej stronie.</p>
+</div>
+
+<body>
+    <h2>
+    {% for r in rooms %}
+        {{ r.id }} pokój {{ name }} o numerze {{ r.room_number }} na {{ r.floor }} piętrze
+        <br/>
+    {% endfor %}
+    </h2>
+</body>
+<a class="button" href="{% url 'welcome' %}">Strona główna</a>
+    {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>
+    Portal dla wędkarzy
+</h1>
+<img src="{% static '/ryba.jpg' %}" alt="rybka">
+
+<p>pole styl_zycia przyjmuje wartosc 1 dla drapieżników, wartość 2 dla ryb spokojnego żeru</p>
+
+    <ol>
+{% for r in ryba %}
+    <li>{{ r.nazwa }}; występowanie - {{ r.wystepowanie }}; styl_życia - {{ r.styl_zycia }}</li>
+{% endfor %}
+    </ol>
+
+<h2>Gatunki chronione</h2>
+
+<ul>
+{% for o in okres %}
+
+    {% if o.wymiar_ochronny != 0 %}
+        <li>{{ o.ryby_id.nazwa }} chroniony od {{ o.od_miesiaca }} do {{ o.do_miesiaca }}; wymiar ochronny - {{ o.wymiar_ochronny }}</li>
+    {% endif %}
+
+{% endfor %}
+</ul>
+
+{% endblock %}

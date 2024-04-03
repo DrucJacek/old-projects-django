@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {% block content %}
+
+
+
+<form method="post">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Zarezerwuj</button>
+</form>
+
+
+
+
+{#        <li>#}
+{#            <p> {{ p.imie }} {{ p.nazwisko }} <a href="{% url 'detail' p.id %}">szczegóły</a></p>#}
+{#        </li>#}
+
+
+
+    {% endblock %}

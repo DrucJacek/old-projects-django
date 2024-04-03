@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+
+{% block title %} Good Doctor! {% endblock %}
+{% block content %}
+
+
+<h1>Good doctor</h1>
+<p>Masz umówione {{ a }} wizyty</p>
+<ul>
+    {% for w in wizytat %}
+     <li><a href="{% url 'detail_1' w.pacjent.pk %}">{{ w.data }}  {{ w.pacjent.nazwisko }}</a></li>
+    {% endfor %} </ul>
+
+<a href="{% url 'new' %}">Umów wizytę</a>
+
+
+<h2 class="lista">Lista Twoich pacjentów</h2>
+<div>
+       <ol>
+    {% for pacjent in pacjent %}
+
+        <li>{{pacjent.imie}} {{ pacjent.nazwisko }}</li>
+
+    {% endfor %} </ol>
+<img src="{% static 'szpital/img.png' %}" alt="sb"/>
+</div>
+
+{% endblock %}
+

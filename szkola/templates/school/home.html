@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+<ul>
+    {% for u in uczent %}
+     <li><a href="{% url 'detailtest' u.pk %}">{{ u.pseudonim }}</a></li>
+    {% endfor %} </ul>
+
+<img src="{% static 'school/hobba.jpg' %}" alt="hb"/><br>
+
+<a href="{% url 'zaint' %}">Koło zainteresowań</a>
+<a href="{% url 'new' %}">Dodaj ucznia</a>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+body {
+    background-color: darkred;
+    color: hotpink;
+}
+
+.table {
+    border: 2px black dotted;
+}
+
+#table2 {
+    border: 2px black solid;
+}

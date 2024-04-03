@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Szczegóły spotkania:{{ meeting.title }} {% endblock %}
+    {% block content %}
+<link rel="stylesheet" href="{% static 'website/style.css' %}"/>
+
+<div class="head">
+    <img src="{% static 'website/sb.png' %}" alt="sb"/>
+    <h1>Szczegóły spotkania</h1>
+</div>
+
+<body>
+{#    <img src="{% static 'website' %}" />#}
+    <h2>
+        Spotkanie na {{meeting.date}}, o
+        {{meeting.start_time}}.
+    </h2>
+<a class="button" href="{% url 'welcome' %}">Strona główna</a>
+</body>
+    {% endblock %}
