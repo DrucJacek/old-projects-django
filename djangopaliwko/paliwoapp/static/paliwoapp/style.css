@@ -1,0 +1,16 @@
+body {
+    background-color: deepskyblue;
+}
+
+th, td {
+    border: 1px black solid;
+}
+
+
+input:hover {
+    padding: 5px;
+}
+
+#dy {
+    margin-left: 12px;
+}
