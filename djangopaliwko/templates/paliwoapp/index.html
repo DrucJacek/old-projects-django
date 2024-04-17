@@ -10,36 +10,54 @@
 
 <table>
     <tr>
-        <th>rodzaj paliwa</th>
-        <th>cena</th>
+        <th class="th">rodzaj paliwa</th>
+        <th class="th">cena</th>
     </tr>
     {% for p in paliwko %}
         <tr>
-            <td>{{ p.rodzaj_paliwa }}</td>
-            <td>{{ p.cena }} zł</td>
+            <td class="td">{{ p.rodzaj_paliwa }}</td>
+            <td class="td">{{ p.cena }} zł</td>
         </tr>
     {% endfor %}
 </table>
+<hr>
+<h3>Dodawanie</h3>
+<form action="{% url 'dodaj' %}" method="post">
+    {% csrf_token %}
+    <table>{{ form }}</table>
+    <button type="submit">dodaj</button>
+</form>
+    {{ suma }}
+<hr>
+<h3>Odejmowanie</h3>
+<form action="{% url 'odejmij' %}" method="post">
+    {% csrf_token %}
+    <table>{{ form }}</table>
+    <button type="submit">odejmij</button>
+</form>
+    {{ roznica }}
+<hr>
+<h3>Mnożenie</h3>
+<form action="{% url 'razy' %}" method="post">
+    {% csrf_token %}
+    <table>{{ form }}</table>
+    <button type="submit">razy</button>
+</form>
+    {{ iloczyn }}
+<hr>
+<h3>Dzielenie</h3>
+<form action="{% url 'dziel' %}" method="post">
+    {% csrf_token %}
+    <table>{{ form }}</table>
+    <button type="submit">dziel</button>
+</form>
+    {{ iloraz }}
+{% if error_message %}
+    <p>{{ error_message }}</p>
+{% endif %}
+<hr>
+<br>
 
-<h2>Oblicz ile litrów musisz zatankować</h2>
-<label>Dystans do przejechania w km:</label>
-<input type="number" id="dy"><br>
-<label>Spalanie samochodu w 1/100km:</label>
-<input type="number" id="sp"><br>
-<input type="submit" value="oblicz" onclick="licz()">
-<p id="wynik"></p>
 
-<script>
-    function licz() {
-        var dystans = Number(document.getElementById("dy").value);
-        var spalanie = Number(document.getElementById("sp").value);
-
-        var wynik = (dystans/spalanie);
-
-        if (wynik>0) {
-             document.getElementById("wynik").innerHTML = "Potrzebujesz " + wynik + " litrów paliwa";
-        }
-    }
-</script>
 
 {% endblock %}
