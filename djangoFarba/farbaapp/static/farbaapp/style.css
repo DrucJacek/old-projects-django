@@ -1,0 +1,11 @@
+body {
+    background-color: mediumpurple;
+}
+
+.th, .td {
+    border: 2px black solid;
+}
+
+.table {
+    border: 2px plum dotted;
+}
