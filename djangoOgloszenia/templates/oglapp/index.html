@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    <h1>Zarejestrowano w bazie {{ ogloszenia|length }} ogłoszeń</h1>
+
+    
+    <ol>
+{% for o in ogloszenia %}
+    <h2>{{ o.tytul }} - dodane przez użytkownika {{ o.uzytkownik_id.imie }} {{ o.uzytkownik_id.nazwisko }}</h2>
+    <p>Uwagi... {{ o.tresc }}</p>
+    <hr>
+{% endfor %}
+    </ol>
+
+{% endblock %}
