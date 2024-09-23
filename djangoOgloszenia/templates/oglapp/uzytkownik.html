@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    <h1>Użytkownicy zarejestrowani w bazie</h1>
+
+    
+    <ol>
+{% for u in uzytkownik %}
+    <li><b>{{ u.imie }} {{ u.nazwisko }}</b></li>
+{% endfor %}
+        </ol>
+    
+    <a href="{% url 'index' %}">Powrót do strony głównej</a>
+
+{% endblock %}

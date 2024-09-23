@@ -1,4 +1,19 @@
 body {
-    background-color: saddlebrown;
+    background-color: lightsalmon;
+    color: darkblue;
 }
 
+img {
+    height: 300px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+div {
+    float: left;
+}
+
+a:visited {
+    color: darkred;
+}

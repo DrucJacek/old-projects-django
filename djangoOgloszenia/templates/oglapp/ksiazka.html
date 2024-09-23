@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    <h1>Istnieją w bazie {{ ksiazka|length }} pozycje typu "książka"</h1>
+
+    
+    <ol>
+{% for k in ksiazka %}
+    {% if k|length == 0 %}
+        <h2 color="red">Brak książek w bazie</h2>
+    {% else %}
+        <li>{{ k.tytul|upper }}</li>
+    {% endif %}
+{% endfor %}
+    
+    </ol>
+    
+    <div>
+        <img src="{% static '/ksiazki.jpg' %}" alt="książeczki">
+    
+        <a href="{% url 'index' %}">Powrót do strony głównej</a>
+    </div>
+
+{% endblock %}

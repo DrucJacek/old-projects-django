@@ -9,9 +9,12 @@
     <ol>
 {% for o in ogloszenia %}
     <h2>{{ o.tytul }} - dodane przez użytkownika {{ o.uzytkownik_id.imie }} {{ o.uzytkownik_id.nazwisko }}</h2>
-    <p>Uwagi... {{ o.tresc }}</p>
+    <a href="{% url 'tresc' o.id %}">szczegóły ogłoszenia</a>
     <hr>
 {% endfor %}
     </ol>
+    
+    <a href="{% url 'uzytkownik' %}">Pokaż wszystkich użytkowników</a><br>
+    <a href="{% url 'ksiazka' %}">Pokaż książki</a>
 
 {% endblock %}

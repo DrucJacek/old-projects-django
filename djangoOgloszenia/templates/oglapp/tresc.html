@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    <h1>Szczegóły ogłoszenia numer {{ id }} </h1>
+
+    <h3>{{ ogloszenie.tresc }}</h3>
+
+    <a href="{% url 'index' %}">Powrót do strony głównej</a>
+
+{% endblock %}
