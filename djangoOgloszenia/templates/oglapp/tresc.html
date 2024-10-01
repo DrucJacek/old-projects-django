@@ -6,6 +6,14 @@
     <h1>Szczegóły ogłoszenia numer {{ id }} </h1>
 
     <h3>{{ ogloszenie.tresc }}</h3>
+    
+<div class="main">
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Usuń ogłoszenie" />
+    </form>
+</div>
+    
 
     <a href="{% url 'index' %}">Powrót do strony głównej</a>
 
