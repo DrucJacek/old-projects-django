@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {% block content %}
+
+<h2>Zaloguj</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Zaloguj</button>
+</form>
+
+
+
+    {% endblock %}
+

@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Uzytkownik, Ogloszenia
-from django.forms import modelform_factory
+from django.forms import modelform_factory, PasswordInput
+from django import forms
+from django.contrib.auth.decorators import login_required
+
 def index(request):
     ogloszenia = Ogloszenia.objects.all()
     return render(request, "oglapp/index.html", {"ogloszenia": ogloszenia})
@@ -15,7 +18,6 @@ def tresc(request, id):
 
     return render(request, "oglapp/tresc.html", {"ogloszenie": tresc, "id": id})
 
-
 def uzytkownik(request):
     uzytkownik = Uzytkownik.objects.all()
     return render(request, "oglapp/uzytkownik.html", {"uzytkownik": uzytkownik})
@@ -25,29 +27,42 @@ def ksiazka(request):
     return render(request, "oglapp/ksiazka.html", {"ksiazka": ksiazka})
 
 
-
-MeetingForm = modelform_factory(Uzytkownik, exclude=[])
-
+@login_required
 def new(request):
+    class UzytkownikForm(forms.ModelForm):
+        class Meta:
+            model = Uzytkownik
+            exclude = []
+            widgets = {
+                'nazwisko': PasswordInput(),
+            }
     if request.method == "POST":
-        form = MeetingForm(request.POST)
+        form = UzytkownikForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("uzytkownik")
     else:
-        form = MeetingForm()
+        form = UzytkownikForm()
     return render(request, "oglapp/new.html", {"form": form})
 
 
 
-MeetingForm2 = modelform_factory(Ogloszenia, exclude=[])
-
+@login_required
 def add(request):
+    class OgloszenieForm(forms.ModelForm):
+        class Meta:
+            model = Ogloszenia
+            exclude = []
+            labels = {
+                'uzytkownik_id': 'Wybierz użytkownika',
+            }
+
     if request.method == "POST":
-        form2 = MeetingForm2(request.POST)
+        form2 = OgloszenieForm(request.POST)
         if form2.is_valid():
             form2.save()
             return redirect("index")
     else:
-        form2 = MeetingForm2()
+        form2 = OgloszenieForm
     return render(request, "oglapp/add.html", {"form2": form2})
+

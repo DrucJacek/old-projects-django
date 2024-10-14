@@ -15,5 +15,10 @@
 </form>
 
 <a href="{% url 'index' %}">strona główna</a>
-
+        
+ <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" style="padding: 5px; background-color: red">Wyloguj</button>
+</form>   
+        
     {% endblock %}

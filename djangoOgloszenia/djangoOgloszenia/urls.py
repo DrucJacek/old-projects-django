@@ -5,5 +5,6 @@ from oglapp.views import index
 urlpatterns = [
     path('', index, name='index'),
     path('oglapp/', include('oglapp.urls')),
-    path("admin/", admin.site.urls)
+    path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]

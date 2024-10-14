@@ -4,7 +4,18 @@
 {% block content %}
     
     <h1>Zarejestrowano w bazie {{ ogloszenia|length }} ogłoszeń</h1>
-
+    
+{% if user.is_authenticated %}
+    <h1 style="font-style: italic; color: darkmagenta">Witam, {{ user.username }}!</h1>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" style="padding: 5px; background-color: red">Wyloguj</button>
+    </form>
+{% else %}
+    <p>Nie jesteś zalogowany</p>
+    <a href="{% url 'login' %}">Zaloguj</a>  
+{% endif %}
+    
     
     <ol>
 {% for o in ogloszenia %}
