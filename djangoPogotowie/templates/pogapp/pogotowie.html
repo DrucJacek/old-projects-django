@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+    {% block content %}
+<h1>Pogotowie ratunkowe aktualna data systemowa</h1>
+        
+
+        
+<table>
+    <tr>
+       <td>adres</td>
+       <td>czas zgłoszenia</td> 
+       <td>dane dyspozytora</td> 
+       <td>numer zespołu</td>
+    </tr>
+{% for z in zgloszenia %}
+    <tr>
+        <td>{{ z.adres }}</td>
+        <td>{{ z.czas_zgloszenia }}</td>
+        <td>{{ z.dyspozytorzy_id }}</td>
+        <td>{{ z.ratownicy_id.numerKaretki }}</td>
+    </tr>
+{% endfor %}
+
+</table>
+        
+        
+        
+<form method="post">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Wyślij zgłoszenie</button>
+</form>
+        
+<img src="{% static "/pogotowie.png" %}">
+        
+    {% endblock %}
