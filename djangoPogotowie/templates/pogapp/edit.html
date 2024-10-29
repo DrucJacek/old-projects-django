@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Edytuj Zgłoszenie{% endblock %}
+
+{% block content %}
+    <h2>Edytuj Zgłoszenie</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Zapisz zmiany</button>
+    </form>
+
+    <a href="{% url 'index' %}">Powrót do listy zgłoszeń</a>
+{% endblock %}

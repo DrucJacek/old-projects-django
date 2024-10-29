@@ -3,6 +3,21 @@
 
 
     {% block content %}
+        
+{% if user.is_authenticated %}
+    <h1 style="font-style: italic; color: darkmagenta">Witam, {{ user.username }}!</h1>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" style="padding: 5px; background-color: red">Wyloguj</button>
+    </form>
+{% else %}
+    <p>Nie jesteś zalogowany</p>
+    <a href="{% url 'login' %}">Zaloguj</a>  
+{% endif %}
+        
+        
+        
+        
 <h1>Pogotowie ratunkowe aktualna data systemowa</h1>
         
 
@@ -20,6 +35,12 @@
         <td>{{ z.czas_zgloszenia }}</td>
         <td>{{ z.dyspozytorzy_id }}</td>
         <td>{{ z.ratownicy_id.numerKaretki }}</td>
+    </tr>
+    <tr>
+        <td>
+             <a href="{% url 'edit' z.id %}">Edit</a>
+             <a href="{% url 'delete' z.id %}" onclick="return confirm('Czy na pewno chcesz usunąć?')">Delete</a>
+        </td>
     </tr>
 {% endfor %}
 
