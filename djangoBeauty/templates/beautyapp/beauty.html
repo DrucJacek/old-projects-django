@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    <h1>Salon Beauty</h1>
+    <img src="{% static '/obraz2.jpg' %}" alt="">
+    <h2>Oferujemy następujące usługi</h2>
+
+    <ol>
+{% for u in uslugi %}
+    <li>{{ u.nazwa }} - {{ u.cena }}</li>
+{% endfor %}
+    </ol>
+    
+    
+    <a href="{% url 'kadra' %}">Nasi specjaliści</a>
+
+{% endblock %}`
